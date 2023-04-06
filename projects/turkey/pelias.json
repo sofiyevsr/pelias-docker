@@ -30,24 +30,21 @@
     }
   },
   "imports": {
-    "adminLookup": {
-      "enabled": true
-    },
     "geonames": {
       "datapath": "/data/geonames",
-      "countryCode": "AZ"
+      "countryCode": "TR"
     },
     "openstreetmap": {
       "download": [
         {
-          "sourceURL": "http://download.geofabrik.de/asia/azerbaijan-latest.osm.pbf"
+          "sourceURL": "http://download.geofabrik.de/europe/turkey-latest.osm.pbf"
         }
       ],
       "leveldbpath": "/tmp",
       "datapath": "/data/openstreetmap",
       "import": [
         {
-          "filename": "azerbaijan-latest.osm.pbf"
+          "filename": "turkey-latest.osm.pbf"
         }
       ]
     },
@@ -61,7 +58,7 @@
     },
     "whosonfirst": {
       "datapath": "/data/whosonfirst",
-      "countryCode": "AZ",
+      "countryCode": "TR",
       "importPostalcodes": true,
       "importPlace": []
     }
