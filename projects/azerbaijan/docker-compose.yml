@@ -59,22 +59,6 @@ services:
       - "./pelias.json:/code/pelias.json"
       - "${DATA_DIR}:/data"
       - "./blacklist/:/data/blacklist"
-  geonames:
-    image: pelias/geonames:master
-    container_name: pelias_geonames
-    user: "${DOCKER_USER}"
-    volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
-      - "./blacklist/:/data/blacklist"
-  csv-importer:
-    image: pelias/csv-importer:master
-    container_name: pelias_csv_importer
-    user: "${DOCKER_USER}"
-    volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "${DATA_DIR}:/data"
-      - "./blacklist/:/data/blacklist"
   transit:
     image: pelias/transit:master
     container_name: pelias_transit
@@ -133,12 +117,3 @@ services:
         soft: 65536
         hard: 65536
     cap_add: [ "IPC_LOCK" ]
-  fuzzy-tester:
-    image: pelias/fuzzy-tester:master
-    container_name: pelias_fuzzy_tester
-    user: "${DOCKER_USER}"
-    restart: "no"
-    command: "--help"
-    volumes:
-      - "./pelias.json:/code/pelias.json"
-      - "./test_cases:/code/pelias/fuzzy-tester/test_cases"
